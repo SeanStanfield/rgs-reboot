@@ -1,0 +1,92 @@
+:root {
+	--heading-one-col: black;
+	--heading-two-col: rgb(31, 31, 31);
+	--heading-three-col: rgb(37, 37, 37);
+	--body-col: rgb(31, 31, 31);
+
+	--mid-blue: #2d69c3;
+	--dark-blue: #294b7f;
+	--yellow: #e7ce4f;
+	--pad-unit: 5rem;
+}
+
+.reviews-wrapper{
+	padding: 0 calc(var(--pad-unit));
+	margin-bottom: calc(2 * var(--pad-unit));
+}
+
+.hero-house-bg {
+	background-image: url('/public/assets/img/HeroHouse.png');
+}
+
+.our-services {
+	padding: 0;
+	/* background: lightblue; */
+	margin: var(--pad-unit);
+	margin-top: 1rem;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.services-list {
+	padding-bottom: calc(var(--pad-unit) * 0.5);
+	min-width: 400px;
+}
+
+.services-text {
+	/* border: solid red; */
+	flex: 3;
+	padding-bottom: var(--pad-unit);
+}
+
+.service-item {
+	padding-top: 6px;
+}
+
+.service-item span {
+	padding-left: 8px;
+	padding-bottom: 200px;
+}
+
+.services-list {
+	padding-top: calc(var(--pad-unit) * 0.5);
+}
+
+.services-img {
+	min-width: 320px;
+	max-height: 600px;
+	flex: 5;
+	/* border: solid green; */
+	position: relative;
+}
+
+.services-img img {
+	max-width: calc(100vw - 2 * var(--pad-unit));
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.reviews {
+	position: relative;
+	/*background-image: url("/assets/img/reviewsBg.svg");*/
+	background-position: center top;
+	background-size: cover;
+	background-repeat: no-repeat;
+	overflow: hidden;
+}
+
+.reviews .section-intro {
+	padding-top: 75px;
+}
+
+.review-ss {
+	width: auto;
+	max-width: 85vw;
+	min-width: 300px;
+	position: relative;
+	display: flex;
+	margin: auto;
+	padding: var(--pad-unit);
+}

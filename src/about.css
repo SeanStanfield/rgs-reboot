@@ -1,0 +1,44 @@
+.hero-wrapper{
+	min-height: 500px;
+	height: 50vh;
+	padding-top: 32px;
+}
+
+.page-description{
+	max-width: 600px;
+}
+
+
+.hero-image, .hero-text{
+	display: grid;
+	place-items: center;
+}
+
+.white-triangle{
+	width: 100vw;
+	translate: 0 4px;
+}
+
+
+.our-story-title{
+	text-align: center;
+	padding: 40px;
+}
+
+.local-workers-title{
+	padding-bottom: 1rem;
+}
+
+.local-workers-text{
+	padding-bottom: 1rem;
+}
+
+.local-workers-stack{
+	height: 100%;
+}
+
+.local-workers-img{
+	min-width: 100%;
+	aspect-ratio: 14 / 9;
+	object-fit: cover;
+}
