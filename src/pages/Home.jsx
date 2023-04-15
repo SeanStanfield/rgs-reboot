@@ -21,6 +21,8 @@ export const Home = () => {
 	if (loading) return <p> Loading... </p>;
 	if (error) return <p> Error :( </p>;
 
+	console.log('page', pageData);
+
 	return (
 		<Styles>
 			<div className='hyper-wrapper'>
@@ -220,7 +222,7 @@ export const Home = () => {
 
 					<SocialProof/>
 
-					<Faqs/>
+					<Faqs faqs={pageData?.attributes?.FAQs} title='Frequently asked questions'/>
 
 					<CtaBox/>
 

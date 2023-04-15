@@ -15,16 +15,11 @@ const IndividualBlog = () => {
 		loading,
 		error,
 		pageData
-	} = useFetch(`http://localhost:1337/api/service-pages?filters[slug][$eq]=${subRoute}&populate=serviceContent&populate=related_services`);
+	} = useFetch(`http://localhost:1337/api/service-pages?filters[slug][$eq]=${subRoute}&populate=serviceContent&populate=related_services&populate=FAQs`);
 	if (loading) return <p> Loading... </p>;
 	if (error) return <p> Error :( </p>;
 
-	// console.log('subroute', subRoute);
-	// console.log('filtered page data', pageData?.[0]?.attributes);
-
 	const service = pageData?.[0]?.attributes;
-	console.log(service, 'individual service');
-
 
 
 	return (
@@ -62,8 +57,6 @@ const IndividualBlog = () => {
 
 					</Grid>
 				)}
-
-
 			</Grid>
 			</Container>
 
@@ -73,7 +66,7 @@ const IndividualBlog = () => {
 				<ServicesGrid services={service?.related_services?.data}/>
 			</Stack>
 
-			<Faqs faqs={service?.faqs ?? []} title={`Frequently asked ${service?.title} questions`}/>
+			<Faqs faqs={service?.FAQs ?? []} title={`Frequently asked ${service?.title} questions`}/>
 
 		</Styles>
 	)

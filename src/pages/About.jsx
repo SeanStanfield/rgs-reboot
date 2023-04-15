@@ -16,11 +16,13 @@ export const About = () => {
 
 
 	const {id} = useParams();
-	const {loading, error, pageData} = useFetch(`http://localhost:1337/api/about/${id ?? ''}?populate=*`);
+	const {loading, error, pageData} = useFetch(`http://localhost:1337/api/about/${id ?? ''}?populate=FAQs`);
 	if (loading) return <p> Loading... </p>;
 	if (error) return <p> Error :( </p>;
 
 	console.log(pageData);
+
+	let faqs = pageData?.attributes?.FAQs
 
 
 	return (
@@ -111,7 +113,7 @@ export const About = () => {
 
 			<AreaAvailability/>
 
-			<Faqs/>
+			<Faqs faqs={faqs} title='Frequently asked questions'/>
 
 			<CtaBox/>
 

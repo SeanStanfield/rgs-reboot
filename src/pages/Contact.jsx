@@ -6,7 +6,7 @@ import {Button, Card, Grid, Input, Stack, TextField, Typography, useMediaQuery} 
 import {useTheme} from "@mui/material/styles";
 import {Helmet} from "react-helmet";
 
-const Contact: React.FC<{}> = () => {
+const Contact = () => {
 
 	const theme = useTheme();
 	const xl = useMediaQuery(theme.breakpoints.only('xl'));
