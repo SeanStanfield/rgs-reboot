@@ -18,7 +18,7 @@ import {useTheme} from "@mui/material/styles";
 export const Home = () => {
 
 	const {id} = useParams();
-	const {loading, error, pageData} = useFetch(`http://localhost:1337/api/home?populate=*`);
+	const {loading, error, pageData} = useFetch(`https://rgs-heroku.herokuapp.com/api/home?populate=*`);
 
 	const theme = useTheme();
 	const mobile = useMediaQuery(theme.breakpoints.down('sm'));

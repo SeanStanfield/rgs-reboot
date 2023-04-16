@@ -19,7 +19,7 @@ export default function /CMS() {
 		<div>
 			<h1>/CMS</h1>
 			<button onClick={handleButtonClick}>Test me</button>
-			<img src='http://localhost:1337/uploads/mobile_rectangle_1323_7ebdb6faa6.png' alt='image from cms'/>
+			<img src='https://rgs-heroku.herokuapp.com/uploads/mobile_rectangle_1323_7ebdb6faa6.png' alt='image from cms'/>
 
 		</div>
 	)

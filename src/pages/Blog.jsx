@@ -8,7 +8,7 @@ import {Helmet} from "react-helmet";
 
 
 const Blog = ({id, title, content}) => {
-	const {loading, error, pageData} = useFetch(`http://localhost:1337/api/blog?populate=*`);
+	const {loading, error, pageData} = useFetch(`https://rgs-heroku.herokuapp.com/api/blog?populate=*`);
 	if (loading) return <p>Loading...</p>;
 	if (error) {
 		console.log(error)

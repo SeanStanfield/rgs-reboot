@@ -18,8 +18,8 @@ import {Helmet} from "react-helmet";
 export const Services = () => {
 
 	const {id} = useParams();
-	const {loading, error, pageData} = useFetch(`http://localhost:1337/api/service/${id ?? ''}?populate=coverImage`);
-	const allServicesPage = useFetch(`http://localhost:1337/api/service-pages/?populate=*`);
+	const {loading, error, pageData} = useFetch(`https://rgs-heroku.herokuapp.com/api/service/${id ?? ''}?populate=coverImage`);
+	const allServicesPage = useFetch(`https://rgs-heroku.herokuapp.com/api/service-pages/?populate=*`);
 
 	const mobile = useMediaQuery(theme.breakpoints.down('md'));
 

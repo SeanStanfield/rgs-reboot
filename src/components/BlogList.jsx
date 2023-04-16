@@ -10,7 +10,7 @@ const BlogList = () => {
 	const location = useLocation();
 
 	const subRoute = location?.pathname?.split('/').pop();
-	const { loading, error, pageData } = useFetch(`http://localhost:1337/api/blog-posts?populate=*`);
+	const { loading, error, pageData } = useFetch(`https://rgs-heroku.herokuapp.com/api/blog-posts?populate=*`);
 	if (loading) return <p>Loading...</p>;
 	if (error) {
 		console.log(error)

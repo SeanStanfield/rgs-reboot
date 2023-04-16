@@ -16,7 +16,7 @@ const IndividualBlog = () => {
 		loading,
 		error,
 		pageData
-	} = useFetch(`http://localhost:1337/api/blog-posts?filters[slug][$eq]=${subRoute}&populate=blogContent&populate=FAQs`);
+	} = useFetch(`https://rgs-heroku.herokuapp.com/api/blog-posts?filters[slug][$eq]=${subRoute}&populate=blogContent&populate=FAQs`);
 	if (loading) return <p> Loading... </p>;
 	if (error) return <p> Error :( </p>;
 

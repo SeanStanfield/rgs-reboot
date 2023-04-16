@@ -16,7 +16,7 @@ export const OldAbout = () => {
 
 
 	const {id} = useParams();
-	const {loading, error, pageData} = useFetch(`http://localhost:1337/api/about/${id ?? ''}?populate=FAQs`);
+	const {loading, error, pageData} = useFetch(`https://rgs-heroku.herokuapp.com/api/about/${id ?? ''}?populate=FAQs`);
 	if (loading) return <p> Loading... </p>;
 	if (error) return <p> Error :( </p>;
 
