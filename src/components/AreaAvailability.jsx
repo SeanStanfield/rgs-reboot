@@ -1,8 +1,13 @@
 import React, {useEffect, useRef, useState} from "react";
 import styled from "@emotion/styled";
 import {Grid, Stack, Typography} from "@mui/material";
-import mapboxgl, {Marker} from "mapbox-gl";
 import {useTheme} from "@mui/material/styles";
+
+import ReactMapGL from "react-map-gl";
+import mapboxgl, {Marker} from "mapbox-gl";
+
+// eslint-disable-next-line import/no-webpack-loader-syntax
+mapboxgl.workerClass = require("worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker").default;
 
 const AreaAvailability = () => {
 
