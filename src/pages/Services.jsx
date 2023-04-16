@@ -18,7 +18,7 @@ import {Helmet} from "react-helmet";
 export const Services = () => {
 
 	const {id} = useParams();
-	const {loading, error, pageData} = useFetch(`http://localhost:1337/api/service/${id ?? ''}?populate=*`);
+	const {loading, error, pageData} = useFetch(`http://localhost:1337/api/service/${id ?? ''}?populate`);
 	const allServicesPage = useFetch(`http://localhost:1337/api/service-pages/?populate=*`);
 
 	const mobile = useMediaQuery(theme.breakpoints.down('md'));
@@ -30,6 +30,8 @@ export const Services = () => {
 	if (error) return <p> Error</p>;
 
 	const allServices = allServicesPage?.pageData;
+
+	console.log('Page Data', pageData);
 
 
 	return (
