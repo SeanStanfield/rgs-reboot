@@ -27,10 +27,10 @@ function Navbar() {
 					<div className='lower-nav'>
 						<ul className='nav-links'>
 							<li><a className='nav-link' href='/'>Home</a></li>
-							<li><a className='nav-link' href='/about'>About Us</a></li>
-							<li><a className='nav-link' href='/services'>Services</a></li>
-							<li><a className='nav-link' href='/blog'>Blog</a></li>
-							<li><a className='nav-link' href='/contact-us'>Contact</a></li>
+							<li><Link className='nav-link' to='/about'>About Us</Link></li>
+							<li><Link className='nav-link' to='/services'>Services</Link></li>
+							<li><Link className='nav-link' to='/blog'>Blog</Link></li>
+							<li><Link className='nav-link' to='/contact-us'>Contact</Link></li>
 						</ul>
 					</div>
 
