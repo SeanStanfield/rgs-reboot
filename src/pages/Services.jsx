@@ -18,7 +18,7 @@ import {Helmet} from "react-helmet";
 export const Services = () => {
 
 	const {id} = useParams();
-	const {loading, error, pageData} = useFetch(`http://localhost:1337/api/service/${id ?? ''}?populate`);
+	const {loading, error, pageData} = useFetch(`http://localhost:1337/api/service/${id ?? ''}?populate=coverImage`);
 	const allServicesPage = useFetch(`http://localhost:1337/api/service-pages/?populate=*`);
 
 	const mobile = useMediaQuery(theme.breakpoints.down('md'));
@@ -72,7 +72,7 @@ export const Services = () => {
 					</Grid>
 
 					<Grid item md={7} className='hero-image'>
-						<img className='van' src={mobile ? '/assets/img/van-full.png' : '/assets/img/rgsRoofingVan.png'}
+						<img className='van' src={pageData?.attributes?.coverImage?.data?.attributes?.url}
 						     alt='van of RGS roofing'/>
 					</Grid>
 				</Grid>
