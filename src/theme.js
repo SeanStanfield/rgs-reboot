@@ -1,5 +1,6 @@
 import {alpha, createTheme, css, lighten, responsiveFontSizes} from "@mui/material";
 import {grey, orange} from "@mui/material/colors";
+import AlfaSlabOne from './fonts/AlfaSlabOne.ttf';
 
 let theme = createTheme({
 	status: {
