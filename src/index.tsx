@@ -8,7 +8,7 @@ import {CmsProvider} from './contexts/CmsContext'
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Layout from "./pages/Layout";
 import {Home} from "./pages/Home";
-import {About} from "./pages/About";
+import {AboutPage} from "./pages/about/index";
 import {ThemeProvider} from "@mui/material";
 import theme from "./theme";
 import PageNotFound from "./components/PageNotFound";

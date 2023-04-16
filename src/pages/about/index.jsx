@@ -12,7 +12,7 @@ import Footer from "../components/Footer";
 import styled from "@emotion/styled";
 import {Helmet} from "react-helmet";
 
-export const OldAbout = () => {
+export const AboutPage = () => {
 
 
 	const {id} = useParams();
