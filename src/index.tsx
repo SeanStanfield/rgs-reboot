@@ -40,7 +40,7 @@ root.render(
 								'\n' +
 								'Liquid applications in roofing refer to the use of liquid materials that are applied to the surface of a roof. These liquids can be used to repair, protect, or enhance the roof\'s performance. Liquid applications are becoming increasingly popular due to their ease of use and effectiveness.\n' +
 								'\n' +
-								'Benefits of Liquid Applications in Roofing'} coverImage={'https://picsum.photos/800/300'}/>}/>
+								'Benefits of Liquid Applications in Roofing'}/>}/>
 							<Route path='blog/:slug' element={<IndividualBlog/>}/>
 							<Route path='contact-us' element={<Contact/>}/>
 							<Route path='*' element={<PageNotFound/>}/>

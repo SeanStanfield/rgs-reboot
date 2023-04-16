@@ -2,7 +2,7 @@ import '../home.css';
 import '../base.css';
 import {ElfsightWidget} from 'react-elfsight-widget';
 import useFetch, {useCmsContext} from "../contexts/CmsContext";
-import {Box, Button, Container, Grid, Stack, Typography} from "@mui/material";
+import {Box, Button, Container, Grid, Stack, Typography, useMediaQuery} from "@mui/material";
 
 import Faqs from "../components/Faqs";
 import CtaBox from "../components/CtaBox";
@@ -13,15 +13,22 @@ import {useParams} from "react-router-dom";
 import {Carousel} from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Footer from "../components/Footer";
+import {useTheme} from "@mui/material/styles";
 
 export const Home = () => {
 
 	const {id} = useParams();
 	const {loading, error, pageData} = useFetch(`http://localhost:1337/api/home?populate=*`);
+
+	const theme = useTheme();
+	const mobile = useMediaQuery(theme.breakpoints.down('sm'));
+
 	if (loading) return <p> Loading... </p>;
 	if (error) return <p> Error :( </p>;
 
-	console.log('page', pageData);
+	console.log('page', pageData?.attributes?.heroImage?.data?.attributes?.url);
+
+
 
 	return (
 		<Styles>
@@ -42,7 +49,7 @@ export const Home = () => {
 
 				</div>
 				<main>
-					<Box className='hero-background'>
+					<Box className='hero-background' sx={{backgroundImage: `url(${pageData?.attributes?.[!mobile ? 'heroImageDesktop' : 'heroImageMobile']?.data?.attributes?.url})`}}>
 						<Container>
 							<Grid container alignItems='center' className='hero-wrapper'>
 								<Grid item md={8} className='hero-text'>
@@ -249,12 +256,6 @@ const Styles = styled.div`
     }
 
     .hero-background {
-        background-image: url("/assets/img/HeroHouseFull.png");
-
-        ${({theme}) => theme.breakpoints.down('sm')} {
-            background-image: url("/assets/img/HeroHouseSmall.png");
-
-        }
 
         background-repeat: no-repeat;
         background-size: cover;

@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 import {Helmet} from "react-helmet";
 
 
-const Blog = ({id, title, content, coverImage}) => {
+const Blog = ({id, title, content}) => {
 	const {loading, error, pageData} = useFetch(`http://localhost:1337/api/blog?populate=*`);
 	if (loading) return <p>Loading...</p>;
 	if (error) {
@@ -53,7 +53,7 @@ const Blog = ({id, title, content, coverImage}) => {
 					</Grid>
 
 					<Grid item md={5} className='hero-image'>
-						<img className='cover' src={coverImage} alt='cover image of the blog'/>
+						<img className='cover' src={pageData?.attributes?.heroImage?.data?.attributes?.url} alt='cover image of the blog'/>
 					</Grid>
 
 				</Grid>
