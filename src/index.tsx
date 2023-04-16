@@ -29,7 +29,7 @@ root.render(
 					<Routes>
 						<Route path='/' element={<Layout/>}>
 							<Route index element={<Home/>}/>
-							<Route path='about' element={<About/>}/>
+							<Route path='about' element={<AboutPage/>}/>
 							<Route path='services' element={<Services/>}/>
 							<Route path='services/:slug' element={<IndividualService/>}/>
 							<Route path='blog' element={<Blog id={1} title={'An introduction to liquid applications'} content={'Liquid Applications in Roofing: Understanding the Benefits\n' +

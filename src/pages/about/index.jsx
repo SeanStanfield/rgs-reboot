@@ -1,14 +1,14 @@
-import '../base.css';
-import '../about.css'
+import '../../base.css';
+import '../../about.css'
 import {Box, Container, Grid, Stack, Typography} from "@mui/material";
-import theme from "../theme";
-import StatsBox from "../components/StatsBox";
-import AreaAvailability from "../components/AreaAvailability";
-import CtaBox from "../components/CtaBox";
-import Faqs from "../components/Faqs";
-import useFetch, {useCmsContext} from "../contexts/CmsContext";
+import theme from "../../theme";
+import StatsBox from "../../components/StatsBox";
+import AreaAvailability from "../../components/AreaAvailability";
+import CtaBox from "../../components/CtaBox";
+import Faqs from "../../components/Faqs";
+import useFetch, {useCmsContext} from "../../contexts/CmsContext";
 import {useLocation, useParams} from "react-router-dom";
-import Footer from "../components/Footer";
+import Footer from "../../components/Footer";
 import styled from "@emotion/styled";
 import {Helmet} from "react-helmet";
 
