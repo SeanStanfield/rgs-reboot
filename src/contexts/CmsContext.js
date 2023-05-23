@@ -40,36 +40,6 @@ export const CmsProvider = ({children}) => {
   const [currentPageData, setCurrentPageData] = useState("");
   const [currentPage, setCurrentPage] = useState('home');
 
-  // // add new Gallery
-  // const createNewGallery = async (data) => {
-  //   await http.post("/api/Gallerys?populate=*", data);
-  // };
-  // update a Gallery entry
-  // const updateGallery = async (GalleryId, data) => {
-  //   await http.put(`/api/Gallerys/${GalleryId}?populate=*`, data);
-  // };
-  // // delete a Gallery entry
-  // const deleteGallery = async (GalleryId) => {
-  //   await http.delete(`/api/Gallerys/${GalleryId}?populate=*`);
-  // };
-  //
-  // // get Gallery id value
-  // const getGalleryId = (id) => {
-  //   setGalleryId(id);
-  // };
-
-  // useEffect(()=>{
-  //   const readHomeData = async () => {
-  //     const response = await http.get(`/api/${currentPage}?populate=*`);
-  //
-  //     const responseArr = Object.values(response.data.data);
-  //
-  //     console.log(responseArr, 'responseArr');
-  //     setCurrentPageData(responseArr);
-  //   };
-  //   return readHomeData;
-  // }, [currentPage]);
-
   const value = {
     currentPageData,
     currentPage,

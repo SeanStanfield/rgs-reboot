@@ -25,7 +25,7 @@ const CtaBox = () => {
 
 const Styles = styled.div`
 
-    background-image: url("/assets/img/cta-shaded.png");
+    background-image: url("https://res.cloudinary.com/ddnkaqqhe/image/upload/v1683560692/cta-shaded-webp_swzqmj.webp");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

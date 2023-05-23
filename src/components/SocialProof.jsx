@@ -1,8 +1,22 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import styled from "@emotion/styled";
-import {Button, Card, CardContent, CardMedia, Container, Grid, Typography} from "@mui/material";
+import {Button, Card, CardContent, CardMedia, Container, Grid, Stack, Typography} from "@mui/material";
 
-const SocialProof = () => {
+const SocialProof = ({images}) => {
+
+	console.log(images?.data);
+
+	const [currImages, setCurrImages] = useState(images);
+
+
+	useEffect(() =>{
+		console.log(images?.data, 'all images')
+		setCurrImages(images);
+
+		console.log(currImages);
+	},[images])
+
+
 
 
 	return (
@@ -10,15 +24,21 @@ const SocialProof = () => {
 			<Container className='wrapper'>
 				<Grid container className='social-grid' spacing={4}>
 					<Grid item md={6} xs={12}>
+						<Stack alignItems='flex-start' justifyContent='center' sx={{height: '100%'}}>
 						<Typography variant='h2' className=''>Quality Brands you can trust</Typography>
 						<Typography variant='body1' className='body'>We pride ourselves on the quality and of our
 							craftmanship and professionalism, but don’t take it from us, with a 4.8 star average rating
 							and 16 5 star reviews, our results speak for themselves.</Typography>
 						<Button variant='contained'>Call now</Button>
+						</Stack>
 					</Grid>
 
 					<Grid item md={6} xs={12}>
-						<img className='img' src='/assets/img/logoGroup.png' alt='companies we use'/>
+						<Stack className='social-proof-images'>
+							{currImages?.data?.map(image =>
+								<img src={image?.attributes?.url} alt={image?.attributes?.name}/>
+							)}
+						</Stack>
 					</Grid>
 				</Grid>
 			</Container>
@@ -29,7 +49,18 @@ const SocialProof = () => {
 const Styles = styled.div`
 
 	
-	
+	.social-proof-images{
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		gap: ${({theme}) => theme.spacing(4)};
+		
+		img{
+			max-width: 45%;
+			flex: 1;
+		}
+	}
 	
 	padding: ${({theme}) => theme.spacing(4, 0, 8, 0)};
 	

@@ -28,7 +28,7 @@ const BlogList = () => {
 					<CardMedia
 						className="card-media"
 						component="img"
-						src={'https://picsum.photos/200/200'}
+						src={post?.attributes?.image?.data?.attributes?.url}
 					/>
 					<CardContent className="card-content">
 						<Typography variant="h3" className="full-width">
