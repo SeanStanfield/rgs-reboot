@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import styled from "@emotion/styled";
-import {Button, Card, CardContent, CardMedia, Container, Grid, Stack, Typography} from "@mui/material";
+import {Button, Container, Grid, Stack, Typography} from "@mui/material";
 
 const SocialProof = ({images}) => {
 

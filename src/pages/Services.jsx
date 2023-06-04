@@ -1,9 +1,7 @@
 import '../base.css';
 import '../about.css'
-import {Box, Container, Grid, Stack, Typography, useMediaQuery} from "@mui/material";
+import {Box, Grid, Typography, useMediaQuery} from "@mui/material";
 import theme from "../theme";
-import StatsBox from "../components/StatsBox";
-import AreaAvailability from "../components/AreaAvailability";
 import CtaBox from "../components/CtaBox";
 import Faqs from "../components/Faqs";
 import styled from "@emotion/styled";
@@ -18,7 +16,7 @@ import {Helmet} from "react-helmet";
 export const Services = () => {
 
 	const {id} = useParams();
-	const {loading, error, pageData} = useFetch(`https://rgs-heroku.herokuapp.com/api/service/${id ?? ''}?populate=coverImage`);
+	const {loading, error, pageData} = useFetch(`https://rgs-heroku.herokuapp.com/api/service/${id ?? ''}?populate=coverImage&populate=overviewImage`);
 	const allServicesPage = useFetch(`https://rgs-heroku.herokuapp.com/api/service-pages/?populate=*`);
 
 	const mobile = useMediaQuery(theme.breakpoints.down('md'));

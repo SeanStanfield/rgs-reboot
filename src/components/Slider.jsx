@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import styled from '@emotion/styled';
-import { Box, Button, IconButton } from '@mui/material';
+import { Box, IconButton } from '@mui/material';
 import { ArrowBack, ArrowForward } from '@mui/icons-material';
 import useEmblaCarousel from 'embla-carousel-react';
 

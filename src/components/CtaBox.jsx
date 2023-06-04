@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
-import {Box, Button, Container, Grid, Stack, Typography} from "@mui/material";
+import {Button, Container, Stack, Typography} from "@mui/material";
 
 const CtaBox = () => {
 

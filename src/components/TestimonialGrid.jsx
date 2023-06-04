@@ -1,13 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {
 	Typography,
-	Accordion,
-	AccordionDetails,
-	AccordionSummary,
 	Grid,
-	Container, Box, Stack,
+	Stack,
 } from '@mui/material';
-import {Add as AddIcon} from '@mui/icons-material';
 import styled from '@emotion/styled';
 import theme from "../theme";
 

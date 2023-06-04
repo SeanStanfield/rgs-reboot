@@ -2,14 +2,11 @@ import React from "react";
 import styled from "@emotion/styled";
 import {Card, CardContent, CardMedia, Container, Grid, Typography} from "@mui/material";
 import {useNavigate, useParams} from "react-router-dom";
-import useFetch from "../contexts/CmsContext";
 
 const ServicesGrid = ({services}) => {
 
 	const {id} = useParams();
 	const navigate = useNavigate();
-
-	console.log(services, 'services inside')
 
 
 	const defaultServices = [
@@ -68,7 +65,7 @@ const ServicesGrid = ({services}) => {
 						<Grid item className='service-grid-item' md={4} xs={12} sm={6} key={index}>
 							<Card onClick={() => navigate(`/services/${service?.attributes?.slug}`)} className='card'>
 								<CardMedia component='img' className='image'
-								           src={`/assets/img/${defaultServices[index].img}`}>
+								           src={service?.attributes?.overviewImage?.data?.attributes?.url}>
 								</CardMedia>
 
 								<CardContent className='content'>

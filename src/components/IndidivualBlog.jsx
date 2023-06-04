@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
-import {Box, Container, Grid, Stack, Typography} from "@mui/material";
-import {useLocation, useNavigate, useParams} from "react-router-dom";
+import {Box, Container, Typography} from "@mui/material";
+import {useLocation} from "react-router-dom";
 import useFetch from "../contexts/CmsContext";
 import Faqs from "./Faqs";
 let md = require('markdown-it')();

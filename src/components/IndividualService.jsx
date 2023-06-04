@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import {Box, Container, Grid, Stack, Typography} from "@mui/material";
-import {useLocation, useNavigate, useParams} from "react-router-dom";
+import {useLocation} from "react-router-dom";
 import useFetch from "../contexts/CmsContext";
 import Faqs from "./Faqs";
 import ServicesGrid from "./ServicesGrid";

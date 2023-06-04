@@ -16,7 +16,7 @@ export const OldAbout = () => {
 
 
 	const {id} = useParams();
-	const {loading, error, pageData} = useFetch(`https://rgs-heroku.herokuapp.com/api/about/${id ?? ''}?populate=FAQs`);
+	const {loading, error, pageData} = useFetch(`https://rgs-heroku.herokuapp.com/api/about/${id ?? ''}?populate=FAQs&populate=headshot`);
 	if (loading) return <p> Loading... </p>;
 	if (error) return <p> Error :( </p>;
 
@@ -72,7 +72,7 @@ export const OldAbout = () => {
 						</Grid>
 
 						<Grid item md={6} className='hero-image'>
-							<img className='headshot' src='/assets/img/headshot.png'
+							<img className='headshot' src={pageData?.attributes?.headshot?.data?.attributes?.url}
 							     alt='Robert Neil, professional roofer'/>
 						</Grid>
 					</Grid>

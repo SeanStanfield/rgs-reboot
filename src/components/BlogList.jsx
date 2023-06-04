@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 import styled from "@emotion/styled";
 import useFetch from "../contexts/CmsContext";
 import {Link, useLocation} from "react-router-dom";

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
-import {Stack, Typography, useMediaQuery} from "@mui/material";
+import {useMediaQuery} from "@mui/material";
 import theme from "../theme";
 import {useCmsContext} from "../contexts/CmsContext";
 
