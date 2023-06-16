@@ -14,8 +14,8 @@ const CtaBox = () => {
 					We offer our services to residential, commercial and industrial clients.</Typography>
 
 				<Stack direction='row' spacing={4} className='buttons'>
-					<Button variant='contained' className='cta-button'>Call now</Button>
-					<Button variant='outlined' className='cta-button'>Get in Touch</Button>
+					<Button variant='contained' className='cta-button' component='a' href='tel:07920865826'>Call now</Button>
+					<Button variant='outlined' className='cta-button' component='a' href='contact-us'>Get in Touch</Button>
 				</Stack>
 
 			</Container>

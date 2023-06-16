@@ -11,12 +11,13 @@ import {useLocation, useParams} from "react-router-dom";
 import Footer from "../../components/Footer";
 import styled from "@emotion/styled";
 import {Helmet} from "react-helmet";
+import React from "react";
 
 export const AboutPage = () => {
 
 
 	const {id} = useParams();
-	const {loading, error, pageData} = useFetch(`https://rgs-heroku.herokuapp.com/api/about/${id ?? ''}?populate=FAQs`);
+	const {loading, error, pageData} = useFetch(`https://rgs-heroku.herokuapp.com/api/about/${id ?? ''}?populate=FAQs&populate=headshot`);
 	if (loading) return <p> Loading... </p>;
 	if (error) return <p> Error :( </p>;
 
@@ -48,38 +49,60 @@ export const AboutPage = () => {
 				      content='https://i.imgur.com/9bkl2aw.png'/>
 				<title>About RGS Roofing Services</title>
 			</Helmet>
+			{/*<Box className='background'*/}
+			{/*     sx={{background: `linear-gradient(to top right, #26354A, ${theme.palette.primary.main})`}}>*/}
+			{/*	<Container>*/}
+			{/*		<Grid container justifyContent='center' alignItems='center' className='hero-wrapper'>*/}
+			{/*			<Grid item md={6} className='hero-text'>*/}
+			{/*				<Box className='hero-content'>*/}
+			{/*					<Typography className='page-title' sx={{pb: 3}}*/}
+			{/*					            variant='h1'>{pageData?.attributes?.title}</Typography>*/}
+			{/*					<Typography className='page-description' variant='body1'>*/}
+			{/*						{pageData?.attributes?.subtitle}*/}
+			{/*					</Typography>*/}
+			{/*					<Typography className='page-description' variant='body1'>*/}
+			{/*						I started RGS Roofing services to provide high quality and reliable roofing at*/}
+			{/*						prices local*/}
+			{/*						people could*/}
+			{/*						actually afford. Whether you need a small fix or a roof overhaul, rest assured we’ll*/}
+			{/*						be able*/}
+			{/*						to help.*/}
+			{/*					</Typography>*/}
+
+			{/*				</Box>*/}
+			{/*			</Grid>*/}
+
+			{/*			<Grid item md={6} className='hero-image'>*/}
+			{/*				<img className='headshot' src={pageData?.attributes?.headshot?.data?.attributes?.url}*/}
+			{/*				     alt='Robert Neil, professional roofer'/>*/}
+			{/*			</Grid>*/}
+			{/*		</Grid>*/}
+
+			{/*	</Container>*/}
+
+			{/*	<img src='/assets/img/whiteTriangle.svg' className='white-triangle' alt='white triangle'/>*/}
+
+			{/*</Box>*/}
+
 			<Box className='background'
-			     sx={{background: `linear-gradient(to top right, #26354A, ${theme.palette.primary.main})`}}>
-				<Container>
-					<Grid container justifyContent='center' alignItems='center' className='hero-wrapper'>
-						<Grid item md={6} className='hero-text'>
-							<Box className='hero-content'>
-								<Typography className='page-title' sx={{pb: 3}}
-								            variant='h1'>{pageData?.attributes?.title}</Typography>
-								<Typography className='page-description' variant='body1'>
-									{pageData?.attributes?.subtitle}
-								</Typography>
-								<Typography className='page-description' variant='body1'>
-									I started RGS Roofing services to provide high quality and reliable roofing at
-									prices local
-									people could
-									actually afford. Whether you need a small fix or a roof overhaul, rest assured we’ll
-									be able
-									to help.
-								</Typography>
+			     sx={{background: `linear-gradient(to top right, #26354A 25%, ${theme.palette.primary.main}) 40%`}}>
 
-							</Box>
-						</Grid>
-
-						<Grid item md={6} className='hero-image'>
-							<img className='headshot' src='/assets/img/headshot.png'
-							     alt='Robert Neil, professional roofer'/>
-						</Grid>
+				<Grid container justifyContent='center' alignItems='center' className='hero-wrapper'>
+					<Grid item md={5} className='hero-text'>
+						<Box className='hero-content'>
+							<Typography className='page-title' sx={{pb: 3}}
+							            variant='h1'>{pageData?.attributes?.title}</Typography>
+							<Typography className='page-description' variant='body1'>
+								{pageData?.attributes?.subtitle}
+							</Typography>
+						</Box>
 					</Grid>
 
-				</Container>
-
-				<img src='/assets/img/whiteTriangle.svg' className='white-triangle' alt='white triangle'/>
+					<Grid item md={7} className='hero-image'>
+						<img className='headshot' src={pageData?.attributes?.headshot?.data?.attributes?.url}
+						     alt='van of RGS roofing'/>
+					</Grid>
+				</Grid>
 
 			</Box>
 			<Container className='our-story'>
@@ -123,26 +146,44 @@ export const AboutPage = () => {
 }
 
 const Styles = styled.div`
-    .hero-wrapper {
-        min -height: 500px;
-        height: 50vh;
-        padding -top: 32px;
+	
+	    .hero-wrapper {
+        padding-top: 0;
+        height: auto !important;
+        min-height: unset;
 
-        ${({theme}
-        ) =>
-                theme.breakpoints.down('md')
-        } {
-            height: unset !important;
-            padding -bottom: ${({theme}
-            ) =>
-                    theme.spacing(4)
-            };
+        ${({theme}) => theme.breakpoints.down('md')} {
+            padding-top: ${({theme}) => theme.spacing(8)};
+            gap: ${({theme}) => theme.spacing(6)};
+        }
+    }
+
+    .headshot {
+        display: block;
+        object-fit: cover;
+        height: 100%;
+        margin-left: auto;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .hero-image {
+        height: 100%;
+        max-height: 100%;
+    }
+
+    .hero-text {
+        padding-left: ${({theme}) => theme.spacing(8)};
+
+        ${({theme}) => theme.breakpoints.down('md')} {
+
+            padding-left: ${({theme}) => theme.spacing(4)};
         }
     }
 
 
     .our-story {
-        margin-top: -75px;
+        //margin-top: -75px;
 
         ${({theme}) => theme.breakpoints.down('lg')} {
             margin-top: -35px;
@@ -157,9 +198,9 @@ const Styles = styled.div`
     }
 
     .headshot {
-        max-width: 350px;
-        aspect-ratio: 1;
-        margin: ${({theme}) => theme.spacing(4, 0)
-        };
+        max-width: 550px;
+        margin: ${({theme}) => theme.spacing(4, 0)};
+	    margin-right: -2rem;
+        
     }
 `;

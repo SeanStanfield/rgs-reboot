@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import styled from "@emotion/styled";
 import {Button, Container, Grid, Stack, Typography} from "@mui/material";
+import {Link} from "react-router-dom";
 
 const SocialProof = ({images}) => {
 
@@ -29,7 +30,7 @@ const SocialProof = ({images}) => {
 						<Typography variant='body1' className='body'>We pride ourselves on the quality and of our
 							craftmanship and professionalism, but don’t take it from us, with a 4.8 star average rating
 							and 16 5 star reviews, our results speak for themselves.</Typography>
-						<Button variant='contained'>Call now</Button>
+						<Button variant='contained' component='a' href='tel:07920865826'>Call now</Button>
 						</Stack>
 					</Grid>
 

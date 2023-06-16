@@ -54,7 +54,7 @@ export const Home = () => {
 							<li className='sidebar-link'><a href='about.html'>About Us</a></li>
 							<li className='sidebar-link'><a href='services.html'>Services</a></li>
 							<li className='sidebar-link'><a href='gallery.html'>Gallery</a></li>
-							<li className='sidebar-link'><a href='contact.php'>Contact</a></li>
+							<li className='sidebar-link'><a href='contact-us'>Contact</a></li>
 						</ul>
 
 					</div>
@@ -74,7 +74,7 @@ export const Home = () => {
 											<Stack direction='row' spacing={4} sx={{paddingTop: 3}}>
 												<Button className='primary-button' variant='contained' color='primary'
 												        component='a'
-												        href='contact.php'>{pageData?.attributes?.heroCta}</Button>
+												        href='contact-us'>{pageData?.attributes?.heroCta}</Button>
 												<Button className='secondary-button' variant='outlined'
 												        color='secondary'
 												        component='a' href='tel:07920865826'>Call now</Button>
