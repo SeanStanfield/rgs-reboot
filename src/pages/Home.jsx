@@ -27,9 +27,6 @@ export const Home = () => {
 	if (loading) return <p> Loading... </p>;
 	if (error) return <p> Error :( </p>;
 
-	console.log('page', pageData?.attributes?.heroImage?.data?.attributes?.url);
-
-
 	return (
 		<>
 			<Helmet>
@@ -99,7 +96,7 @@ export const Home = () => {
 
 						<Box className='slider-wrapper'>
 							<Carousel autoPlay={true} infiniteLoop={true} interval={8000} showStatus={false}
-							          emulateTouch={true}>
+							          emulateTouch={true} preventMovementUntilSwipeScrollTolerance={true} swipeScrollTolerance={mobile ? 50 : 10}>
 
 								<Box className='slider'>
 									<Container>

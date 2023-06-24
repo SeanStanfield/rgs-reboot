@@ -8,9 +8,13 @@ const Slider = ({ _children }) => {
 	const [sliderRef, sliderApi] = useEmblaCarousel({
 		align: 'center',
 		loop: true,
+		active: false,
+		draggable: false,
+		// breakpoints: {
+		// 	'(min-width: 768px)': { active: false },
+		// },
 	});
 
-	const [test, useTest] = useState(4)
 	const $next = useRef(null);
 	const [activeIndex, setActiveIndex] = useState(null);
 
